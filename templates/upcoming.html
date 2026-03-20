@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Holiday Tracker ✈️</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        Holiday Tracker . <i class="fa-solid fa-plane"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/"> View All </a></li>
+          <li><a href="/upcoming" class="active"> Upcoming </a></li>
+          <li><a href="/dream"> Dream </a></li>
+          <li><a href="/past"> Past </a></li>
+          <li>
+            <a href="/add" class="add-btn"
+              ><i class="fa-solid fa-plus"></i>Add</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>UPCOMING DESTINATIONS</h2>
+      <div class="cards">
+        {% for destination in destinations %} {% if destination['status'] ==
+        'Upcoming' %}
+        <div class="card card-upcoming">
+          <span class="badge badge-upcoming">Upcoming</span>
+          <h3>{{ destination['city'] }} ✈️</h3>
+          <p>{{ destination['country'] }}</p>
+          <p>{{ destination['date'] }}</p>
+          <hr />
+          <p>{{ destination['notes'] }}</p>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

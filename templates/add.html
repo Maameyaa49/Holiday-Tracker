@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Holiday Tracker ✈️ </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+    
+
+<body>
+      <header>
+      <div class="logo">Holiday Tracker .  <i class="fa-solid fa-plane"></i></div>
+      <nav>
+        <ul>
+          <li><a href="/"> View All </a></li>
+          <li><a href="/upcoming"> Upcoming </a></li>
+          <li><a href="/dream"> Dream </a></li>
+          <li><a href="/past"> Past </a></li>
+          <li><a href="/add" class="add-btn"><i class="fa-solid fa-plus"></i>Add</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>ADD A DESTINATION.  <i class="fa-solid fa-plane"> </i></h2>
+        <form action="/add" method="POST">
+            <input type="text" name="city" placeholder="City e.g. Tokyo" required>
+            <input type="text" name="country" placeholder="Country e.g. Japan" required>
+            <input type="text" name="date" placeholder="Date e.g. 12/01/2026" >
+
+            <select name="status">
+                <option value="Dream"> 💭 Dream Holiday</option>
+                <option value="Upcoming"> ✈️ Upcoming Holiday</option>
+                <option value="Past">📍 Past Holiday</option>
+            </select>
+
+            <textarea name="notes" placeholder="Any notes?"></textarea>
+            <button type="submit">Add Destination</button>
+        </form> 
+    </div>
+
+</body>
+
+</html>
