@@ -44,7 +44,9 @@
         {% for destination in destinations %} {% if destination['status'] ==
         'Past' %}
         <div class="card card-past">
-          <span class="badge badge-past">Past</span>
+           <a href="/delete/{{ loop.index0 }}" class="delete-btn">
+        <i class="fa-solid fa-trash"></i>
+    </a>          <span class="badge badge-past">Past</span>
           <h3>{{ destination['city']}} 📍</h3>
           <p>{{ destination['country']}}</p>
           <p>{{ destination['date'] }}</p>
