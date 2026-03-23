@@ -43,7 +43,9 @@
         {% for destination in destinations %} {% if destination['status'] ==
         'Dream' %}
         <div class="card card-dream">
-          <span class="badge badge-dream">Dream</span>
+           <a href="/delete/{{ loop.index0 }}" class="delete-btn">
+        <i class="fa-solid fa-trash"></i>
+    </a>          <span class="badge badge-dream">Dream</span>
           <h3>{{ destination['city']}} 💭</h3>
           <p>{{ destination['country']}}</p>
           <p>{{ destination['date'] }}</p>
